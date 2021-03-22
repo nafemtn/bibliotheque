@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>MyLibrary</title>
+    <link rel="stylesheet" href="biblio.css">
+    <link rel="icon" href="">
+
+</head>
+
+<body>
+
+    <main>
+
+        <form method="POST" action="http://127.0.0.1:8000">
+                <label for="title" > Book Title </label>
+                <input type="text" name="title"/>
+
+                <label for="price" > Price </label>
+                <input type="number" name="price" step=".01"/>
+
+                <label for="date"> Year of publication </label>
+                <input type="year" name="date" placeholder="1997" maxlength="4"/>
+
+                <label for="language"> Language </label>
+                <input type="texte" name="language"/>
+
+                <input type="submit">
+
+        </form>
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+</body>
