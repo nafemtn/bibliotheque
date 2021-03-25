@@ -1,0 +1,28 @@
+/*Présentation du tab*/
+
+.tab {
+    border-collapse: collapse;
+    min-width: 450px;
+    width: auto;
+    box-shadow: 0 5px 50px beige;
+    margin: 100px auto;
+    border: 2px solid brown;
+}
+
+th {
+    background-color: brown;
+    text-align: left;
+    color: wheat;
+}
+
+th, td {
+    padding:15px 20px;
+}
+
+tbody tr, td, th {
+    border: 1px solid brown;
+}
+
+table tr:nth-child(odd) {
+    background-color: cornsilk;
+}
