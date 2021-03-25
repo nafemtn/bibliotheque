@@ -18,19 +18,21 @@ require "index.php"
     </head>
 
     <body>
+
     <!-- Bouton JavaS-->
 
-        
-            <button data-modal-target="#modal">Add a New Book </button>
+            <div>
+            <button id="open-button" class="open-button" data-modal-target="#modal" onclick="openModal()">Add a New Book </button>
+            </div> 
 
              <div class="modal" id="modal">   
 
                 <div  class="modal-header">Fill the forms</div>
 
             <button data-close-button class="close-button">&times;</button>
-
+ 
              
-                    <div class="modal-form">
+                    <div id="modal-form" class="modal-form">
 
                         <form method="POST" action="add.php" >
                     
@@ -47,15 +49,15 @@ require "index.php"
                             <input type="texte" name="language"/>
                     
                             <label for="author" > Choose an Author </label>
-                            <select name="author" id="author">
+                            <select name="author_id" id="author">
 
                                 <?php
-                                        $selection = $objetPdo->query('SELECT name FROM author');
+                                        $selection = $objetPdo->query('SELECT name, id FROM author');
                                     
                                     while ($donnees = $selection->fetch())
                                         {
                                  ?>     
-                                   <option value= "<?php echo $donnees['name']?>"> </option>
+                                   <option value= "<?php echo $donnees['id']?>"> <?php echo $donnees['name']?>  </option>
                                         
                                     <?php
                                         } 
@@ -95,56 +97,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)){
         $price = $_POST['price'];
         $date = $_POST['date'];
         $language = $_POST['language'];
+        $author_id = $_POST['author_id'];
         
-        $sql= $objetPdo->prepare("INSERT INTO book (title, price, date, language) VALUES (:title, :price, :date, :language)");
+        $sql= $objetPdo->prepare("INSERT INTO book (title, price, date, language, author_id) VALUES (:title, :price, :date, :language, :author_id)");
 
-        $sql->execute(array(':title' => $title, ':price' => $price, ':date' => $date, ':language' => $language));
+        $sql->execute(array(':title' => $title, ':price' => $price, ':date' => $date, ':language' => $language, ':author_id' => $author_id));
     } 
 }
 ?>
 
-<!-- Form pour récupérer information de l'auteur-->
-
 <html>
+    <p>if the author of your book is not on the list, please inform him</p>
     
-    <form method="POST" action="add.php" >
-        
-        <label for="name" > Author's name</label>
-        <input type="text" name="name"/>
-
-        <label for="date" > Year of date </label>
-        <input type="year" name="date" maxlength="4"/>
-
-        <label for="country"> Native Country </label>
-        <input type="text" name="country" />
-
-        <input type="submit" name="send" value="send"/> 
-    </form>
-
+    <a href="author.php" target="_blank"> Add an Author </a>
 </html>
-
-
-
-<?php 
-
-// récupérer information du forms auhtor
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)){
-    echo $_POST['name'];
-    echo $_POST['date'];
-    echo $_POST['country'];
-
-    if(empty($_POST['name']) || empty($_POST['date']) || empty($_POST['country']))
-    { 
-    } else {
-        $authorName = $_POST['name'];
-        $authorDate = $_POST['date'];
-        $country = $_POST['country'];
-        
-        $sql1= $objetPdo->prepare("INSERT INTO author (name, date, country) VALUES (:name, :date, :country)");
-
-        $sql1->execute(array(':name' => $authorName, ':date' => $authorDate, ':country' => $country));
-    }
-}
-
-?>

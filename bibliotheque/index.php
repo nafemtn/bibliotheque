@@ -5,6 +5,10 @@
 
     <link rel="stylesheet" href="tab.css">
 
+<body>
+   <img src="library.jpg" class="bg"/>
+    <h1>Book's List</h1>
+
     <table  class="tab">
         
         <thead>
@@ -34,5 +38,6 @@ foreach  ($objetPdo->query($sql) as $row) {
     </tbody>    
 
     </table>   
+    </body>
     </html>
 
