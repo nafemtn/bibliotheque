@@ -1,5 +1,6 @@
-.bg {
+body {
    
+    color: white;
     background-image: url(library.jpg);
     background-size: cover;
     width: 100%;
@@ -8,10 +9,30 @@
 }
 
 h1 {
-    text-align: center;
+    margin-top: 40px;
+    padding-bottom: 20px;
+    color: beige;
+    font-size: 70px;
+    padding-left: 10px;
 }
 
+.addA {
+   border: 1px solid brown;
+   text-align: center;
+   font-size: larger;
+   width: 400px;
+   display: block;
+   margin: auto;
+   background-color: beige;
+   color: black;
+   border-radius: 10px;
+   margin-bottom: 10%;
+}
 
+.addAuthor {
+    font-size: larger;
+
+}
 
 
 /*Présentation du tab*/
@@ -23,6 +44,7 @@ h1 {
     box-shadow: 0 5px 50px beige;
     margin: 100px auto;
     border: 2px solid brown;
+    margin-top: auto;
 }
 
 th {
@@ -41,4 +63,5 @@ tbody tr, td, th {
 
 table tr:nth-child(odd) {
     background-color: cornsilk;
+    color: black;
 }

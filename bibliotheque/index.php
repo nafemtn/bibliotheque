@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="tab.css">
 
 <body>
-   <img src="library.jpg" class="bg"/>
+  <!-- <img src="library.jpg" class="bg"/> -->
     <h1>Book's List</h1>
 
     <table  class="tab">
@@ -31,7 +31,7 @@ foreach  ($objetPdo->query($sql) as $row) {
                 $row['title'] .  "</td><td>" . 
                 $row['name'] .  "</td><td>" . 
                 $row['id'];
-
+   
 }
 ?>
     </thead>

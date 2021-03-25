@@ -107,7 +107,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)){
 ?>
 
 <html>
-    <p>if the author of your book is not on the list, please inform him</p>
     
-    <a href="author.php" target="_blank"> Add an Author </a>
+    <div class="addA">
+        <p>if the author of your book is not on the list, please inform him</p>
+        
+        <a href="author.php" target="_blank" class="addAuthor"> Add an Author </a>
+    </div>
+
+
 </html>
