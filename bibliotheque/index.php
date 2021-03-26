@@ -13,13 +13,32 @@
         
         <thead>
             <tr>
-                <th>Book's Title</th>
+                <th>Book's Title </th>
+
+                <label for="sort" > Sort </label>
+                <select name="sort" id="sort">
+
+                    <?php
+                            $sort = $objetPdo->query('SELECT title FROM book ORDER BY title ASC');
+                        
+                        while ($asc = $sort->fetch())
+                            {
+                    ?>     
+                    <option value= "<?php echo $sort['title']?>"></option>
+
+
+
+                        <?php
+                            } 
+                        ?>
+                </select>
+
                 <th> Author's name</th>
-                <th>Book's ID</th>
+                <th>Book's ID </th>
                 
             </tr>
       
- 
+
         <?php
 
 $objetPdo = new PDO('mysql:host=localhost;dbname=bibliotheque','root','');

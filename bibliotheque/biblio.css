@@ -1,17 +1,21 @@
 .btnPopup {
     background-color: beige;
     border: brown;
-    padding: 1em 2em;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 20px;
     color: black;
     display: block;
+    width: 200px;
+    height: 80px;
+    border-radius: 10px;
+    box-shadow: 0 5px 60px rgb(214, 214, 151);
     margin: auto;
-    margin-bottom: 10px;
+    margin-bottom: 80px;
+    font-size: 25px;
 }
 
 .btnPopup:hover {
-    box-shadow: 0 5px 60px rgb(214, 214, 151);
+    box-shadow: 0 5px 60px red;
 }
 
 .overlay {
@@ -25,10 +29,10 @@
 }
 
 .popup {
-    margin: 20% auto;
-    width: 70%;
-    background-color: beige;
-    border-radius: 5px ;
+    margin: auto;
+    width: 40%;
+    background-color:beige;
+    border-radius: 10px ;
     box-shadow: 0 5px 60px beige;
     color: black;
     padding: 1em;
@@ -47,118 +51,39 @@
     text-align: center;
 }
 
-/*Modifiet Modal*/
-
- /* .modal { 
-    display: none;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    color: black;
-}
-
-.modal-content {
-    background-color: beige;
-    margin: 15% auto;
-    padding: 20px;
+.addBook {
     border: 1px solid brown;
-    width: 80%;
-}
-
-.close-button {
-    color: brown;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close-button:hover, .close:focus {
-    color:black;
-    text-decoration: none;
-    cursor: pointer;
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .modal-wrapper {
-    width: 600px   ;
-    background-color: beige;
-    padding: 20px;
-    max-width: 100vh  ; 
-}*/
-/* 
-.form-modal {
-    font-size: 20px;
-    color: black;
-}
-
-.title-modal {
-    font-size: 70px;
-    color: black; */
-/* }
-.modal {
-    border: 1px solid black;
-    border-radius: 10px;
-    background-color: beige;
-    z-index: 10 ;
-    width: 180px;
-    color: black;
-}
-
-.open-button {
-    cursor: pointer;
-    width: 200px;
-    height: 50px;
-    border-radius: 20px;
-    display: block;
+    text-align: center;
+    font-size: larger;
+    width: 250px;
+    height: 70px;
     margin: auto;
-    font-size: larger;
-    background-color: beige;
+    background-color: rgba(168, 72, 72, 0.698);
+    color: black;
+    border-radius: 10px;
     box-shadow: 0 5px 50px beige;
-}
-
-.modal-header {
-    padding: 10px 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.modal .close-button {
     cursor: pointer;
-    border: none; 
-    outline: none;
-    background: none;
-    font-size: 1.25rem;
-    font-weight: bold;
-}
+    margin-top:20px;
+ } 
 
-.modal-form {
-    font-size: larger;
-} 
+ .form_add {
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto;
+    margin: 30px auto 0 auto;
+    font-size: 20px;
+ }
 
-/*.overlay{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: maroon;
-    pointer-events: none;
-}
+ .addAuthor {
+     font-size: 30px;
+     margin-bottom: 30px;
+ }
+
+ input, select {
+     width: 150px;
+     display: grid;
+    grid-template-columns: auto;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+ }

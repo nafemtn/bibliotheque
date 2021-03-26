@@ -13,24 +13,9 @@ h1 {
     padding-bottom: 20px;
     color: beige;
     font-size: 70px;
-    padding-left: 10px;
+    text-align: center;
 }
 
- .addBook {
-   border: 1px solid brown;
-   text-align: center;
-   font-size: larger;
-   width: 250px;
-   height: 70px;
-   display: block;
-   margin: auto;
-   background-color: beige;
-   color: black;
-   border-radius: 10px;
-   margin-bottom: 10%;
-   box-shadow: 0 5px 50px beige;
-   cursor: pointer;
-} 
 
 a {
     font-size: larger;

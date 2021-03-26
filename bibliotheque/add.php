@@ -32,7 +32,7 @@ require "index.php"
                         Add a Book <span id="btnClose" class="btnClose">&times;</span> 
                     </h1>
                         
-                            <form method="POST" action="add.php" >
+                            <form method="POST" action="add.php" class="form_add" >
                         
                                 <label for="title" > Book Title </label>
                                 <input type="text" name="title"/>
@@ -63,7 +63,7 @@ require "index.php"
 
                                 </select>
 
-                                <p>if the author of your book is not on the list, please click on "Add an Author"<p>
+                                <p>If the author of your book is not on the list, please click on "Add an Author"<p>
                                 <a href="author.php" target="_blank" class="addAuthor"> Add an Author </a>
 
                                 <input type="submit" name="ADD" value="Add a New Book" class="addBook"/> 
@@ -93,7 +93,7 @@ require "index.php"
                         function closeModal(){
                             overlay.style.display = 'none';
                         }
-                        
+
         </script>
 
     </body>
@@ -128,14 +128,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)){
     } 
 }
 ?>
-
-<!-- <html>
-    
-    <div class="addA">
-        <p>if the author of your book is not on the list, please inform him</p>
-        
-        <a href="author.php" target="_blank" class="addAuthor"> Add an Author </a>
-    </div>
-
-
-</html> -->
