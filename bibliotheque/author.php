@@ -3,6 +3,8 @@
 
 <!-- Form pour récupérer information de l'auteur-->
 
+
+
 <html>
 
     <link rel="stylesheet" href="author.css">
@@ -20,8 +22,10 @@
             <label for="country"> Native Country </label>
             <input type="text" name="country" />
 
-            <input type="submit" name="send" value="Add" class="btn"/> 
+            <input type="submit" name="send" value="Add an Author" class="btn"/> 
 
+            <a href="add.php" target="_blank" class="a_addBook"> Add a book ! </a>
+            
         </form>
 
 </html>
@@ -50,8 +54,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)){
         $sql1->execute(array(':name' => $authorName, ':date_birth' => $authorDate, ':country' => $country));
     }
 }
-
-    header('Location: add.php');
-    exit();
 
 ?>

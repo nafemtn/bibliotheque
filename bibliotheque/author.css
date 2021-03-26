@@ -38,3 +38,10 @@ label {
     box-shadow: 0 5px 50px beige;
     cursor: pointer;
 }
+
+.a_addBook {
+    display: block;
+    color: beige;
+    cursor: pointer;
+    font-size: 45px;
+} 
