@@ -21,19 +21,17 @@ require "index.php"
 
     <!-- Bouton JavaS-->
 
-    <script src="index.js"> </script>
 
-            <!--<button id="modal-btn" > Add a new Book </button> -->
-            
-             <!-- <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="titlemodal" style="display:none;">  -->
+           <button id="btnPopup" class="btnPopup" > Add a new Book </button> 
 
-             <div id="myModal" class="modal"> 
-                
-            <div class="modal-content">
+           <div id="overlay" class="overlay">
 
-           <!-- <span id="close-button"> Close </span> -->
+               <div id="popup" class="popup">
 
-                        <div class="form-modal">
+                    <h1 class="titlePopup">
+                        Add a Book <span id="btnClose" class="btnClose">&times;</span> 
+                    </h1>
+                        
                             <form method="POST" action="add.php" >
                         
                                 <label for="title" > Book Title </label>
@@ -72,15 +70,37 @@ require "index.php"
                                 
                             </form>
                             
-                        </div>  
+                </div>  
 
             </div>
 
-            <div class="overlay" id="overlay"></div>
+        <script> 
+
+            var btnPopup = document.getElementById("btnPopup");
+            var overlay = document.getElementById('overlay');
+            var btnClose = document.getElementById('btnClose');
+
+                btnPopup.addEventListener('click',openModal);
+
+                btnClose.addEventListener('click',closeModal);
+
+                        function openModal(){
+                            overlay.style.display = 'block';
+
+                            console.log("OpenModal");
+                        }
+
+                        function closeModal(){
+                            overlay.style.display = 'none';
+                        }
+                        
+        </script>
+
     </body>
 
 </html>
  
+
  <?php
 
 
