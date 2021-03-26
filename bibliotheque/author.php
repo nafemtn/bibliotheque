@@ -4,36 +4,39 @@
 <!-- Form pour récupérer information de l'auteur-->
 
 <html>
+
+    <link rel="stylesheet" href="author.css">
+
     
-    <form method="POST" action="add.php" >
-        
-        <label for="name" > Author's name</label>
-        <input type="text" name="name"/>
 
-        <label for="date-birth" > Year of date </label>
-        <input type="year" name="date_birth" maxlength="4"/>
+        <form method="POST" action="author.php" >
+            
+            <label for="name" > Author's name</label>
+            <input type="text" name="name"/>
 
-        <label for="country"> Native Country </label>
-        <input type="text" name="country" />
+            <label for="date-birth" > Year of date </label>
+            <input type="year" name="date_birth" maxlength="4"/>
 
-        <input type="submit" name="send" value="send"/> 
+            <label for="country"> Native Country </label>
+            <input type="text" name="country" />
 
-    </form>
+            <input type="submit" name="send" value="Add" class="btn"/> 
+
+        </form>
 
 </html>
 
 
 
 <?php 
-require "index.php";
 // récupérer information du forms auhtor
+$objetPdo = new PDO('mysql:host=localhost;dbname=bibliotheque','root','');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)){
 
-var_dump($_POST);
-    echo $_POST['name'];
-    echo $_POST['date_birth'];
-    echo $_POST['country'];
+    // echo $_POST['name'];
+    // echo $_POST['date_birth'];
+    // echo $_POST['country'];
 
     if(empty($_POST['name']) || empty($_POST['date_birth']) || empty($_POST['country']))
     { 
@@ -47,4 +50,8 @@ var_dump($_POST);
         $sql1->execute(array(':name' => $authorName, ':date_birth' => $authorDate, ':country' => $country));
     }
 }
+
+    header('Location: add.php');
+    exit();
+
 ?>

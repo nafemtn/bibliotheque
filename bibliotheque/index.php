@@ -16,6 +16,7 @@
                 <th>Book's Title</th>
                 <th> Author's name</th>
                 <th>Book's ID</th>
+                
             </tr>
       
  
@@ -30,9 +31,12 @@ foreach  ($objetPdo->query($sql) as $row) {
 
                 $row['title'] .  "</td><td>" . 
                 $row['name'] .  "</td><td>" . 
-                $row['id'];
-   
-}
+                $row['id'] . "</td><td>" ?>  
+                <a href="delete.php?idd=<?= $row['id'] ?>" > Delete </a> <br>
+                <a href="edit.php?idd=<?= $row['id'] ?>" >  Edit </a> 
+
+   <?php 
+   }
 ?>
     </thead>
     </tbody>    

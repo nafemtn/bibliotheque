@@ -21,55 +21,58 @@ require "index.php"
 
     <!-- Bouton JavaS-->
 
-            <div>
-            <button id="open-button" class="open-button" data-modal-target="#modal" onclick="openModal()">Add a New Book </button>
-            </div> 
+    <script src="index.js"> </script>
 
-             <div class="modal" id="modal">   
+            <!--<button id="modal-btn" > Add a new Book </button> -->
+            
+             <!-- <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="titlemodal" style="display:none;">  -->
 
-                <div  class="modal-header">Fill the forms</div>
+             <div id="myModal" class="modal"> 
+                
+            <div class="modal-content">
 
-            <button data-close-button class="close-button">&times;</button>
- 
-             
-                    <div id="modal-form" class="modal-form">
+           <!-- <span id="close-button"> Close </span> -->
 
-                        <form method="POST" action="add.php" >
-                    
-                            <label for="title" > Book Title </label>
-                            <input type="text" name="title"/>
-                    
-                            <label for="price" > Price </label>
-                            <input type="number" name="price" step=".01"/>
-                    
-                            <label for="date"> Year of publication </label>
-                            <input type="year" name="date" placeholder="1997" maxlength="4"/>
-                    
-                            <label for="language"> Language </label>
-                            <input type="texte" name="language"/>
-                    
-                            <label for="author" > Choose an Author </label>
-                            <select name="author_id" id="author">
-
-                                <?php
-                                        $selection = $objetPdo->query('SELECT name, id FROM author');
-                                    
-                                    while ($donnees = $selection->fetch())
-                                        {
-                                 ?>     
-                                   <option value= "<?php echo $donnees['id']?>"> <?php echo $donnees['name']?>  </option>
-                                        
-                                    <?php
-                                        } 
-                                    ?>
-
-                            </select>
-
-                            <input type="submit" name="ADD" value="Add a New Book"/> 
-                            
-                        </form>
+                        <div class="form-modal">
+                            <form method="POST" action="add.php" >
                         
-                    </div>  
+                                <label for="title" > Book Title </label>
+                                <input type="text" name="title"/>
+                        
+                                <label for="price" > Price </label>
+                                <input type="number" name="price" step=".01"/>
+                        
+                                <label for="date"> Year of publication </label>
+                                <input type="year" name="date" placeholder="1997" maxlength="4"/>
+                        
+                                <label for="language"> Language </label>
+                                <input type="texte" name="language"/>
+                        
+                                <label for="author" > Choose an Author </label>
+                                <select name="author_id" id="author">
+
+                                    <?php
+                                            $selection = $objetPdo->query('SELECT name, id FROM author');
+                                        
+                                        while ($donnees = $selection->fetch())
+                                            {
+                                    ?>     
+                                    <option value= "<?php echo $donnees['id']?>"> <?php echo $donnees['name']?>  </option>
+                                            
+                                        <?php
+                                            } 
+                                        ?>
+
+                                </select>
+
+                                <p>if the author of your book is not on the list, please click on "Add an Author"<p>
+                                <a href="author.php" target="_blank" class="addAuthor"> Add an Author </a>
+
+                                <input type="submit" name="ADD" value="Add a New Book" class="addBook"/> 
+                                
+                            </form>
+                            
+                        </div>  
 
             </div>
 
@@ -106,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)){
 }
 ?>
 
-<html>
+<!-- <html>
     
     <div class="addA">
         <p>if the author of your book is not on the list, please inform him</p>
@@ -115,4 +118,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)){
     </div>
 
 
-</html>
+</html> -->
