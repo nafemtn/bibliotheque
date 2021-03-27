@@ -1,4 +1,6 @@
 <?php
+// Lien Delete
+
 require "index.php";
 
 $id = $_GET['idd']; 

@@ -1,9 +1,5 @@
 
-
-
 <!-- Form pour récupérer information de l'auteur-->
-
-
 
 <html>
 
@@ -29,8 +25,6 @@
         </form>
 
 </html>
-
-
 
 <?php 
 // récupérer information du forms auhtor

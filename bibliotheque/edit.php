@@ -1,5 +1,9 @@
 <?php
+
+//lien edit
+
 require "index.php";
+
 
 $id = $_GET['idd']; 
 
@@ -55,3 +59,4 @@ $row = $stmt->fetch(PDO::FETCH_OBJ);
                         
         </form>
 <html>
+

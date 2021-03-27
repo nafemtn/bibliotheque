@@ -21,7 +21,6 @@ require "index.php"
 
     <!-- Bouton JavaS-->
 
-
            <button id="btnPopup" class="btnPopup" > Add a new Book </button> 
 
            <div id="overlay" class="overlay">
@@ -49,17 +48,17 @@ require "index.php"
                                 <label for="author" > Choose an Author </label>
                                 <select name="author_id" id="author">
 
-                                    <?php
-                                            $selection = $objetPdo->query('SELECT name, id FROM author');
-                                        
-                                        while ($donnees = $selection->fetch())
-                                            {
-                                    ?>     
-                                    <option value= "<?php echo $donnees['id']?>"> <?php echo $donnees['name']?>  </option>
-                                            
-                                        <?php
-                                            } 
-                                        ?>
+<?php
+                    $selection = $objetPdo->query('SELECT name, id FROM author');
+                
+                while ($donnees = $selection->fetch())
+                    {
+?>     
+                                <option value= "<?php echo $donnees['id']?>"> <?php echo $donnees['name']?>  </option>
+                    
+<?php
+                      } 
+?>
 
                                 </select>
 
@@ -127,4 +126,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)){
         $sql->execute(array(':title' => $title, ':price' => $price, ':date' => $date, ':language' => $language, ':author_id' => $author_id));
     } 
 }
+
 ?>

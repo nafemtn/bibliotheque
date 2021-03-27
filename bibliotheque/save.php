@@ -1,5 +1,7 @@
 <?php
 
+//php pour enregistrer les modifications de edit.php
+
 $i = $_GET['idd'];
 $title = $_GET['title'];
 $price = $_GET['price'];

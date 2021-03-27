@@ -1,5 +1,8 @@
 <?php
 
+//Php pour ajouter un livre au tableau
+
+
 $objetPdo = new PDO('mysql:host=localhost;dbname=bibliotheque','root','');
 
 $title = $_POST ['title'];
