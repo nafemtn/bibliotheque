@@ -1,0 +1,47 @@
+/* Formulaire pour ajouter un auteur */
+
+form {
+    text-align: center;
+    background-color: rgba(165, 42, 42, 0.726);
+    width: 300px;
+    margin: 3% auto 0 auto;
+}
+
+body {
+    line-height: 50px;
+    color: beige;
+    font-family: 'lato';
+    padding-bottom: 70%;
+    background-image: url(library.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+
+label {
+    display: inline-block;
+    width: 100%;        
+}
+
+.btn {
+    border: 1px solid brown;
+    text-align: center;
+    font-size: larger;
+    width: 250px;
+    height: 70px;
+    text-align: center;
+    margin-top: 10%;
+    background-color: beige;
+    color: black;
+    border-radius: 10px;
+    margin-bottom: 10%;
+    box-shadow: 0 5px 50px beige;
+    cursor: pointer;
+}
+
+.a_addBook {
+    display: block;
+    color: beige;
+    cursor: pointer;
+    font-size: 45px;
+} 

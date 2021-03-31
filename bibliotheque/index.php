@@ -1,68 +1,73 @@
-<?php
-//var
-// $title = $_POST ['title'];
-// $price = $_POST ['price'];
-// $date = $_POST ['date'];
-// $language = $_POST ['language'];
 
-// //ouvrir base de donée
-// $objetPdo = new PDO('mysql:host=localhost;dbname=bibliotheque','root','');
+ 
+  <html>
+<!--  display : tabs book & author from mySQL -->
 
-// //requette ajouter un livre
+    <link rel="stylesheet" href="tab.css">
 
-// $pdoStat = $objetPdo->prepare('INSERT INTO book VALUES (NULL, :title, :price, :date, :language,)');
+<body>
+  <!-- <img src="library.jpg" class="bg"/> -->
+    <h1>Book's List</h1>
 
-// //on lie chaque marqueur à une valeur 
+    <table  class="tab">
+        
+        <thead>
+            <tr>
+                <th>Book's Title </th>
+                <th> Author's name</th>
+                <th>Book's ID </th>
+            </tr>
+      
+            <label for="sort" class="sort"> Sorting book's title by </label>
+            <select name="sort" id="sort" value="<?= $row1->title ?>">
+                    
+ <?php
 
-// $pdoStat->bindValue(':title', $_POST ['title'], PDO::PARAM_STR);
-// $pdoStat->bindValue(':price', $_POST ['price'], PDO::PARAM_STR);
-// $pdoStat->bindValue(':date', $_POST ['date'], PDO::PARAM_STR);
-// $pdoStat->bindValue(':language', $_POST ['language'], PDO::PARAM_STR);
+    $objetPdo = new PDO('mysql:host=localhost;dbname=bibliotheque','root','');
 
-// //ex"cuter requete
+            $resultSet = $objetPdo->query("SELECT book.title FROM book ORDER BY title ASC");
 
-// $insertisOk = $pdoStat->execute();
+                while($row1 = $resultSet->fetch()) {
+                }
+                    
+            
+            $resultSet = $objetPdo->query("SELECT book.title FROM book ORDER BY title DESC");
 
-// if($insertIsok) {
-//     echo "livre ajouter";
-// }
-// else {
-//     echo "pbm";
-// } 
+                while($row2 = $resultSet->fetch()) {
+                }
+                    
 
-// if(mysqli_connect_errno()){
-//     echo "failed to connect";
-//     exit();
-// }
-// echo "connection sucess";
+ ?>
 
-if(isset($_POST['insert']))
-{
+            <option value= "<?php echo $row1['title']?>"> In ascending order </option>
+            <option value= "<?php echo $row2['title']?>"> In descending order </option>
+            </select>
 
-$serverName = "localhost";
-$userName = "root";
-$password = "";
-$dbName = "bibliotheque";
+ <?php
 
-$title = $_POST ['title'];
-$price = $_POST ['price'];
-$date = $_POST ['date'];
-$language = $_POST ['language'];
+$objetPdo = new PDO('mysql:host=localhost;dbname=bibliotheque','root','');
 
-// connection
+$sql = ('SELECT book.title, author.name, book.id FROM book LEFT JOIN author ON book.author_id = author.id');
 
-$con = mysqli_connect($serverName, $userName, $password, $dbName);
+foreach  ($objetPdo->query($sql) as $row) {
 
+        echo "<tr><td>" .
 
-$query = "INSERT INTO `book`(`title`, `price`, `date`, `language`) VALUES ('$title', '$price', '$date', '$language')";
+                $row['title'] .  "</td><td>" . 
+                $row['name'] .  "</td><td>" . 
+                $row['id'] . "</td><td>" 
+ ?>               
+                <a href="delete.php?idd=<?= $row['id'] ?>" > Delete </a> <br>
+                <a href="edit.php?idd=<?= $row['id'] ?>" >  Edit </a> 
 
-$result = mysqli_query($con,$query);
+ <?php 
+    }
+ ?>
 
-if($result)
-{
-    echo "Data Inserted";
-}
-else {
-    echo "Data Not Inserted";
-}
-}
+    </thead>
+    </tbody>    
+
+    </table>   
+    </body>
+    </html>
+
